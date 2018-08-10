@@ -19,7 +19,7 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top anim" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="/">Leila</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead anim" style="background-image: url('img/home-bg.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -207,6 +207,17 @@
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
 
+    <script type="text/javascript">
+	 $(document).ready(function(){
+	    $(".anim").on("click","a", function (event) {
+		event.preventDefault();
+		var id  = $(this).attr('href'),
+		    top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top}, 1500);
+	    });
+	});
+     </script>
+	  
   </body>
 
 </html>
